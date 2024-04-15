@@ -6,6 +6,7 @@ const catController = require('../controllers/cat.controller')
 
 router.get('/', catController.read);
 router.post('/add', catController.create);
+router.put('/update/:id/:name', catController.update);
 
 
   
