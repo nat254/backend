@@ -1,18 +1,11 @@
-const cats = [];
+const cats = ['cat1','meow'];
 
 // delete is a reserved keyword.
 
 
 exports.create = (req, res) => {
-    const { name } = req.params;
+    const { name } = req.body;
     cats.push(name);
-    res.send("added");
+    res.status(201).json({ name });
 }
 
-exports.read = (req, res) => {
-    res.send(cats);
-}
-
-exports.post = (req, res) => {
-    res.send("post");
-}

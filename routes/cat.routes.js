@@ -4,8 +4,9 @@ const catController = require('../controllers/cat.controller')
 
 
 
-router.get('/', catController.read)
-router.get('/add/:name', catController.create)
-router.post('/add', catController.post)
 
-module.exports = router
+router.post('/add', catController.create);
+
+
+  
+module.exports = router;
