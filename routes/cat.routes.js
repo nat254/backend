@@ -4,7 +4,7 @@ const catController = require('../controllers/cat.controller')
 
 
 
-
+router.get('/', catController.read);
 router.post('/add', catController.create);
 
 
