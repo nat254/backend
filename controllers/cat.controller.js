@@ -9,3 +9,6 @@ exports.create = (req, res) => {
     res.status(201).json({ name });
 }
 
+exports.read = (req, res) => {
+    res.send(cats);
+}
