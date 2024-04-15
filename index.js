@@ -1,6 +1,6 @@
-const express = require('express')
-const app = express()
-const port = 3000
+// const express = require('express')
+// const app = express()
+// const port = 3000
 
 // app.get('/', (req, res) => {
 //   res.send('root')
@@ -49,5 +49,23 @@ const port = 3000
 //   console.log(`Example app listening on port ${port}`)
 // })
 
-const cat = require('./routes/cat.routes')
-app.use('/c', cat)
+// const cat = require('./routes/cat.routes')
+// app.use('/c', cat)
+
+const express = require('express');
+const app = express();
+const catsRouter = require('./routes/cat.routes');
+
+app.use(express.json());
+app.use('/cats', catsRouter);
+
+
+
+// app.get('/', (req, res) => {
+//     res.send('Hello World');
+// });
+
+app.listen(3000, () => {
+    console.log('Example app listening on port 3000!');
+    }
+);

@@ -4,8 +4,11 @@ const catController = require('../controllers/cat.controller')
 
 
 
-router.get('/', catController.read)
-router.get('/add/:name', catController.create)
-router.post('/add', catController.post)
+router.get('/', catController.read);
+router.post('/add', catController.create);
+router.put('/update/:id/:name', catController.update);
+router.delete('/delete/:index', catController.deleteCat);
 
-module.exports = router
+
+  
+module.exports = router;
