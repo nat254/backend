@@ -11,4 +11,7 @@ router.get('/read', todoController.read);
 // PUT request to update a todo by ID
 router.put('/update/:id', todoController.updateTodo);
 
+// DELETE request to delete a todo by ID
+router.delete('/delete/:id', todoController.deleteTodo);
+
 module.exports = router;

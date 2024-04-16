@@ -35,10 +35,10 @@ exports.updateTodo = (req, res) => {
     todos[todoIndex].title = title || todos[todoIndex].title;
     todos[todoIndex].importance = importance || todos[todoIndex].importance;
 
-    
+
     if (completed !== undefined) {
         todos[todoIndex].completed = completed;
-        
+
         if (completed) {
             todos[todoIndex].completedAt = new Date();
         } else {
@@ -48,3 +48,14 @@ exports.updateTodo = (req, res) => {
 
     res.json(todos[todoIndex]);
 }
+
+// Delete a todo by ID
+exports.deleteTodo = (req, res) => {
+    const { id } = req.params;
+    const todoIndex = todos.findIndex(todo => todo.id === parseInt(id));
+    if (todoIndex === -1) {
+        return res.status(404).json({ message: "Todo NOT FOUND" });
+    }
+    todos.splice(todoIndex, 1);
+    res.sendStatus(204);
+}  
