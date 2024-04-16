@@ -53,19 +53,22 @@
 // app.use('/c', cat)
 
 const express = require('express');
-const app = express();
+
 const catsRouter = require('./routes/cat.routes');
+const todoRouter = require('./routes/todo.routes');
+
+const app = express();
 
 app.use(express.json());
 app.use('/cats', catsRouter);
 
-
-
-// app.get('/', (req, res) => {
-//     res.send('Hello World');
-// });
+app.use('/todo', todoRouter);
 
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!');
     }
 );
+
+
+
+
